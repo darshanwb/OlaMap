@@ -1,6 +1,6 @@
-# Ola Map
+# Map Features with Ola SDK
 
-Basic functionality of ola map.
+This README covers various map features using the Ola SDK, including markers, polylines, polygons, and gestures.
 
 ## Features
 
@@ -12,6 +12,7 @@ Basic functionality of ola map.
 - Bezier Curve
 - Events and Methods
 - Controls and Gestures
+
 
 ## XML
 
