@@ -85,3 +85,77 @@ var olaPoint=OlaLatLng(23.026861, 72.524454)
     olaMap.addPolyline(polylineOptions)
 ```
 ![App Screenshot](https://iili.io/d6D1kep.md.png)
+
+
+## 4. Circle
+- Add a Circle to the map
+```
+    val olaCampus = OlaLatLng(23.020911, 72.556294)
+    val circleOptions = OlaCircleOptions.Builder()
+        .setOlaLatLng(olaCampus)
+        .setRadius(100f)
+        .build()
+
+    circleOptions.also {
+    it.colorHexCode="#00FF00"
+    it.circleOpacity=0.3F
+    }
+
+    olaMap.addCircle(circleOptions)
+```
+![App Screenshot](https://iili.io/d6D4fUv.md.png)
+
+
+## 5. Polygon
+- Add a Polygon to the map
+```
+    val pointsForPolyGon = arrayListOf(
+                        OlaLatLng(23.036676, 72.561319),
+                        OlaLatLng(23.039534, 72.563988),
+                        OlaLatLng(23.035369, 72.564778),
+                    )
+    val polygonOptions = OlaPolygonOptions.Builder()
+                        .setPolygonId("polygon1")
+                        .setColor("#FF0000")
+                        .setOpacity(0.4f)
+                        .setPoints(pointsForPolyGon)
+                        .build()
+
+    var polygon = olaMap.addPolygon(polygonOptions)
+    olaMap.addPolygon(polygonOptions)
+```
+![App Screenshot](https://iili.io/d6DDrrP.md.png)
+
+## 6. Bezier Curve
+- Add a Bezier Curve to the map
+```
+    val startPoint = OlaLatLng(23.036885, 72.561059)
+    val endPoint = OlaLatLng(23.037355, 72.567242)
+    val bezierCurveOptions = BezierCurveOptions.Builder()
+                        .setCurveId("bcurve1")
+                        .setStartPoint(startPoint)
+                        .setLineType(LineType.LINE_DOTTED)
+                        .setColor("#000000")
+                        .setEndPoint(endPoint)
+                        .build()
+
+    var bezierCurve = olaMap.addBezierCurve(bezierCurveOptions)
+    olaMap.addBezierCurve(bezierCurveOptions)
+```
+![App Screenshot](https://iili.io/d6bKzIS.md.png)
+
+## 8. Controls and Gestures
+```
+val mapControlSettings = MapControlSettings.Builder()
+   .setRotateGesturesEnabled(true)
+   .setScrollGesturesEnabled(true)
+   .setZoomGesturesEnabled(false)
+   .setCompassEnabled(true)
+   .setTiltGesturesEnabled(true)
+   .setDoubleTapGesturesEnabled(true)
+   .build()
+
+mapView.getMap(apiKey = "<API KEY>",
+olaMapCallback = object : OlaMapCallback {}, mapControlSettings)
+```
+
