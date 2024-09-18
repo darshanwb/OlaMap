@@ -1,4 +1,4 @@
-# Map Features with Ola SDK
+# Map Features with Ola Map SDK
 
 This README covers various map features using the Ola SDK, including markers, polylines, polygons, and gestures.
 
